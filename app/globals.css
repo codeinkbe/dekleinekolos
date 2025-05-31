@@ -1,26 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
+
 @import "tailwindcss";
+/* @import "tailwindcss/preflight"; */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-cinzel-decorative: "Cinzel Decorative", serif;
+  --font-east-sea-dokdo: "East Sea Dokdo", cursive;
+  --font-a-bee-zee: "ABeeZee", sans-serif;
+
+  /* Text colors */
+  --color-text-base: #F0F0F0;
+  --color-text-primary: #EDF1DB;
+  --color-text-secondary: #62BDBA;
+  
+  /* Background colors */
+  --color-bg-primary: #00060C;
+  --color-bg-secondary: #031E2A;
+  
+  /* Interactive colors */
+  --color-btn: #01515E;
+  --color-hover: #2B8087;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  /* Section wrapper for all main sections */
+  .section-container {
+    @apply min-h-screen max-w-screen-lg mx-auto relative flex flex-col items-center justify-center py-[120px] gap-20;
+  }
+  
+  /* Content wrapper for centered content */
+  .content-wrapper {
+    @apply flex flex-col items-center justify-center z-50 max-w-screen-lg mx-auto;
+  }
+  
+  /* Section header styles */
+  .section-header {
+    @apply flex flex-col items-center justify-center z-50 mx-auto gap-4;
+  }
+  
+  /* Section description text */
+  .section-description {
+    @apply flex flex-col items-center justify-center z-50 mx-auto text-text-primary text-center font-east-sea-dokdo text-3xl leading-10 whitespace-pre-line;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-timeline: smooth;
+  }
+
+  :target {
+    scroll-margin-block: 5rem;
+    scroll-timeline: smooth;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
