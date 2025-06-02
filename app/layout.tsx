@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Little Colossus",
-  description: "The Little Colossus",
+  title: "The Tiny Colossus",
+  description: "The Tiny Colossus Game",
 };
 
 export default function RootLayout({
