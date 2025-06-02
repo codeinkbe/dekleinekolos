@@ -1,6 +1,7 @@
 import React from 'react'
-import TopMenuBar from '@/components/TopMenuBar'
 import Image from 'next/image'
+import TopMenuBar from '@/components/TopMenuBar'
+import Footer from '@/components/Footer'
 
 // sections:
 import ParallaxHeader from '@/app/sections/ParallaxHeader'
@@ -9,8 +10,8 @@ import StorySection from '@/app/sections/StorySection'
 import FeatureSection from '@/app/sections/FeatureSection'
 import GameplaySection from '@/app/sections/GameplaySection'
 import WorldSection from '@/app/sections/WorldSection'
-import ContactSection from '@/app/sections/ContactSection'
-import Footer from '@/components/Footer'
+import AboutSection from './sections/AboutSection'
+import DevelopmentSection from './sections/DevelopmentSection'
 
 export default function Page() {
   return (
@@ -34,10 +35,15 @@ export default function Page() {
         <WorldSection />
         <Image src="/bgs/world.png" alt="world background" width={1000} height={1000} className='absolute top-0 left-0 w-full h-full object-cover z-10 opacity-50' />
       </section>
-      <section id='contact'>
-        <ContactSection />
+      <section id='development' className='bg-bg-primary relative'>
+        <DevelopmentSection />
       </section>
-      <Footer />
+      <section id='about' className='bg-bg-secondary relative'>
+        <AboutSection />
+      </section>
+      <section id='footer' className='bg-text-primary relative'>
+        <Footer />
+      </section>
     </div>
   )
 }

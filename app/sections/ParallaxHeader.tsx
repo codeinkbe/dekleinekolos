@@ -1,13 +1,23 @@
 'use client';
 
+import { useImagePreloader } from '@/hooks/UseImagePreloader';
 import React, { useState, useEffect } from 'react'
+import LoadingScreen from '@/components/LoadingScreen';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ParallaxHeader() {
     const [scrollY, setScrollY] = useState(0)
 
+    const imagesToPreload = [
+        ...Array.from({ length: 14 }, (_, i) => `/layers/deKleineKolos_${i + 1}.png`),
+    ];
+
+    const { imagesLoaded, loadedCount, totalImages } = useImagePreloader(imagesToPreload);
+
     useEffect(() => {
         let ticking = false
-        
+
         const handleScroll = () => {
             if (!ticking) {
                 requestAnimationFrame(() => {
@@ -17,13 +27,23 @@ export default function ParallaxHeader() {
                 ticking = true
             }
         }
-        
+
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    if (!imagesLoaded) {
+        return <LoadingScreen imagesLoaded={imagesLoaded} loadedCount={loadedCount} totalImages={totalImages} />
+    }
+
     return (
         <div className="relative w-full h-screen overflow-hidden">
+            <div className='absolute w-full h-full flex items-end justify-center p-14 text-text-primary font-a-bee-zee text-md font-bold z-99 bottom-0'>
+                <Link href="#hero" className='flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300'>
+                    <div>Explore</div>
+                    <Image src="/SVG/arrowdown.svg" alt="arrow-down" width={100} height={100} className='w-4 h-4 hover:scale-110 transition-all duration-300' />
+                </Link>
+            </div>
             {/* Layer 1 - Fastest (Foreground) */}
             <div
                 className="absolute inset-0 "

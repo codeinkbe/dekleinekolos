@@ -6,7 +6,7 @@ export default function GameplaySection() {
   return (
     <div className='section-container'>
       <div className='flex flex-col items-center justify-center z-50 gap-20 w-full'>
-        <SectionHeader title={gameplayHeader.title} description={gameplayHeader.description} />
+        <SectionHeader title={gameplayHeader.title} description={gameplayHeader.description} align='left' />
         {gameplayCards.map((card, index) => (
           <GameplayCard 
             key={index}

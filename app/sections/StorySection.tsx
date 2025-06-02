@@ -4,7 +4,7 @@ import SectionHeader from '@/components/SectionHeader';
 export default function StorySection() {
   return (
     <div className='section-container bg-bg-secondary'>
-      <SectionHeader title={storyHeader.title} description={storyHeader.description} />
+      <SectionHeader title={storyHeader.title} description={storyHeader.description} align='center' />
     </div>
   )
 }

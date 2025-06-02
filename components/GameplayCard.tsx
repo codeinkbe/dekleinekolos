@@ -1,8 +1,9 @@
 'use client';
 
+
+import { motion } from 'framer-motion'
 import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 
 export default function GameplayCard({ title, description, image, alignment, index }: { title: string, description: string, image: string, alignment: 'left' | 'right', index: number }) {
     const isRight = alignment === 'right'
@@ -22,7 +23,7 @@ export default function GameplayCard({ title, description, image, alignment, ind
         <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className='items-start justify-center z-50  mx-auto w-full grid grid-cols-4 gap-4'
         >
