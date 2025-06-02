@@ -1,8 +1,6 @@
 'use client';
 
-import { useImagePreloader } from '@/hooks/UseImagePreloader';
 import React, { useState, useEffect } from 'react'
-import LoadingScreen from '@/components/LoadingScreen';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -10,11 +8,6 @@ import { motion } from 'framer-motion';
 export default function ParallaxHeader() {
     const [scrollY, setScrollY] = useState(0)
 
-    const imagesToPreload = [
-        ...Array.from({ length: 14 }, (_, i) => `/layers/deKleineKolos_${i + 1}.png`),
-    ];
-
-    const { imagesLoaded, loadedCount, totalImages } = useImagePreloader(imagesToPreload);
 
     useEffect(() => {
         let ticking = false
@@ -33,16 +26,13 @@ export default function ParallaxHeader() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
-    if (!imagesLoaded) {
-        return <LoadingScreen imagesLoaded={imagesLoaded} loadedCount={loadedCount} totalImages={totalImages} />
-    }
 
     return (
         <div className="relative w-full h-screen overflow-hidden">
-            <motion.div 
+            <motion.div
                 className='absolute w-full h-full flex items-end justify-center p-14 text-text-primary font-a-bee-zee text-md font-bold z-199 bottom-0'
-                animate={{ 
-                    opacity: Math.max(0, 1 - scrollY / 300) 
+                animate={{
+                    opacity: Math.max(0, 1 - scrollY / 300)
                 }}
                 transition={{ duration: 0 }}
             >
