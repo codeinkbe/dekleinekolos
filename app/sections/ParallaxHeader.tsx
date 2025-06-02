@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import LoadingScreen from '@/components/LoadingScreen';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function ParallaxHeader() {
     const [scrollY, setScrollY] = useState(0)
@@ -38,12 +39,18 @@ export default function ParallaxHeader() {
 
     return (
         <div className="relative w-full h-screen overflow-hidden">
-            <div className='absolute w-full h-full flex items-end justify-center p-14 text-text-primary font-a-bee-zee text-md font-bold z-99 bottom-0'>
+            <motion.div 
+                className='absolute w-full h-full flex items-end justify-center p-14 text-text-primary font-a-bee-zee text-md font-bold z-199 bottom-0'
+                animate={{ 
+                    opacity: Math.max(0, 1 - scrollY / 300) 
+                }}
+                transition={{ duration: 0 }}
+            >
                 <Link href="#hero" className='flex flex-col items-center justify-center gap-2 hover:scale-110 transition-all duration-300'>
                     <div>Explore</div>
                     <Image src="/SVG/arrowdown.svg" alt="arrow-down" width={100} height={100} className='w-4 h-4 hover:scale-110 transition-all duration-300' />
                 </Link>
-            </div>
+            </motion.div>
             {/* Layer 1 - Fastest (Foreground) */}
             <div
                 className="absolute inset-0 "
