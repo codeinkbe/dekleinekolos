@@ -3,8 +3,8 @@ import "./globals.css";
 import PlausibleProvider from "next-plausible";
 
 export const metadata: Metadata = {
-  title: "The Tiny Colossus",
-  description: "The Tiny Colossus Game",
+  title: "Little Colossus",
+  description: "Little Colossus Game",
 };
 
 export default function RootLayout({
