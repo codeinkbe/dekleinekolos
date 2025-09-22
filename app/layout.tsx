@@ -14,7 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <PlausibleProvider domain="littlecolossus.com" customDomain="https://analytics.codeink.be" />
+      <head>
+        <PlausibleProvider
+          domain="littlecolossus.com"
+          customDomain="https://analytics.codeink.be"
+        />
+      </head>
       <body className={` antialiased`}>{children}</body>
     </html>
   );
