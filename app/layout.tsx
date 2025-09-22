@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PlausibleProvider from "next-plausible";
 
 export const metadata: Metadata = {
   title: "The Tiny Colossus",
@@ -13,11 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` antialiased`}
-      >
-        {children}
-      </body>
+      <PlausibleProvider domain="littlecolossus.com" customDomain="https://analytics.codeink.be" />
+      <body className={` antialiased`}>{children}</body>
     </html>
   );
 }

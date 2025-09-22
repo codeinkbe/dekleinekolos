@@ -24,7 +24,7 @@ export default function AboutSection() {
         </motion.div>
       </div>
       <div className='flex flex-col items-start w-full text-text-primary justify-center gap-4'>
-        <p className='text-text-primary font-a-bee-zee'>Follow their journey and get a behind-the-scenes look on Instagram or Bluesky</p>
+        <p className='text-text-primary font-a-bee-zee'>Follow their journey and get a behind-the-scenes look on Instagram</p>
         <div className='flex flex-row items-center justify-start gap-4'>
           {socialLinks.map((link) => (
             <SocialLink key={link.id} href={link.href} icon={link.icon} text={link.text} />
@@ -37,27 +37,27 @@ export default function AboutSection() {
 
 const aboutHeader = {
   title: 'Who are we',
-  description: 'The Tiny Colossus is the brainchild of Timo Vergauwen, a filmmaker and game designer, and is currently in development at his independent studio, Studio Traveling Light. Combining cinematic visuals and atmospheric stealth mechanics, Vergauwen brings his unique artistic vision to life in this emotional journey across a world on the brink of collapse.'
+  description: 'Little Colossus is the brainchild of Timo Vergauwen, a filmmaker and game designer, and is currently in development at his independent studio, Studio Traveling Light. Combining cinematic visuals and atmospheric stealth mechanics, Vergauwen brings his unique artistic vision to life in this emotional journey across a world on the brink of collapse.'
 }
 
 
 const socialLinks = [
   {
     id: 1,
-    href: 'https://www.instagram.com/studiotravelinglight/',
+    href: 'https://www.instagram.com/timovergauwen',
     icon: '/SVG/square-instagram-brands.svg',
-    text: 'StudioTravelingLight'
+    text: 'Timo Vergauwen'
   },
-  {
-    id: 2,
-    href: 'https://www.instagram.com/studiotravelinglight/',
-    icon: '/SVG/square-instagram-brands.svg',
-    text: 'DeKleineKolos'
-  },
-  {
-    id: 3,
-    href: 'https://www.instagram.com/studiotravelinglight/',
-    icon: '/SVG/square-bluesky-brands.svg',
-    text: 'DeKleineKolos'
-  }
+  // {
+  //   id: 2,
+  //   href: 'https://www.instagram.com/studiotravelinglight/',
+  //   icon: '/SVG/square-instagram-brands.svg',
+  //   text: 'DeKleineKolos'
+  // },
+  // {
+  //   id: 3,
+  //   href: 'https://www.instagram.com/studiotravelinglight/',
+  //   icon: '/SVG/square-bluesky-brands.svg',
+  //   text: 'DeKleineKolos'
+  // }
 ]
