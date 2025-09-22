@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <PlausibleProvider
-          domain="littlecolossus.com"
+          domain="littlecolossusgame.com"
           customDomain="https://analytics.codeink.be"
         />
       </head>
