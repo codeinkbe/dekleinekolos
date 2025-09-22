@@ -10,9 +10,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import ParallaxHeader from '@/app/sections/ParallaxHeader'
 import HeroSection from '@/app/sections/HeroSection'
 import StorySection from '@/app/sections/StorySection'
-import FeatureSection from '@/app/sections/FeatureSection'
-import GameplaySection from '@/app/sections/GameplaySection'
-import WorldSection from '@/app/sections/WorldSection'
+// import FeatureSection from '@/app/sections/FeatureSection'
+// import GameplaySection from '@/app/sections/GameplaySection'
+// import WorldSection from '@/app/sections/WorldSection'
 import AboutSection from './sections/AboutSection'
 import DevelopmentSection from './sections/DevelopmentSection'
 import { useImagePreloader } from '@/hooks/UseImagePreloader'
@@ -57,7 +57,7 @@ export default function Page() {
                     <StorySection />
                     <Image src="/bgs/storybg.png" alt="story background" width={1000} height={1000} className='absolute top-0 left-0 w-full h-full object-cover z-10 opacity-50' />
                 </section>
-                <section id='gameplay'>
+                {/* <section id='gameplay'>
                     <GameplaySection />
                 </section>
                 <section id='features' className='bg-bg-secondary relative'>
@@ -66,7 +66,7 @@ export default function Page() {
                 <section id='world' className='bg-bg-secondary relative'>
                     <WorldSection />
                     <Image src="/bgs/world.png" alt="world background" width={1000} height={1000} className='absolute top-0 left-0 w-full h-full object-cover z-10 opacity-50' />
-                </section>
+                </section> */}
                 <section id='development' className='bg-bg-primary relative'>
                     <DevelopmentSection />
                 </section>

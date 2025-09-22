@@ -14,18 +14,18 @@ const menuItems = [
       name: 'Story',
       href: '#story'
    },
-   {
-      name: 'Gameplay',
-      href: '#gameplay'
-   },
-   {
-      name: 'Features',
-      href: '#features'
-   },
-   {
-      name: 'World',
-      href: '#world'
-   },
+   // {
+   //    name: 'Gameplay',
+   //    href: '#gameplay'
+   // },
+   // {
+   //    name: 'Features',
+   //    href: '#features'
+   // },
+   // {
+   //    name: 'World',
+   //    href: '#world'
+   // },
    {
       name: 'Development',
       href: '#development'

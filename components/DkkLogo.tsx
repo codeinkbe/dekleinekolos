@@ -5,8 +5,8 @@ export default function DkkLogo({textOnly = false, color = 'light'}: {textOnly?:
 
     const textContent = (
         <div className={`leading-5 absolute ${textOnly ? 'left-0' : 'left-12'} bottom-0 font-cinzel-decorative z-20`}>
-            <div className="text-[1.00rem] tracking-wide">De kleine</div>
-            <div className="text-[1.56rem] tracking-wide">kolos</div>
+            <div className="text-[1.00rem] tracking-wide">little</div>
+            <div className="text-[1.56rem] tracking-wide">Colossus</div>
         </div>
     )
 
